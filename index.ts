@@ -28,7 +28,7 @@ async function main(index){
   const dir = path.join(DOWNLOAD_DIR, title)
   await fs.ensureDir(dir)
 
-  const firstImg = $('img[alt="01"]').parent('a')
+  const firstImg = $('#gdt').find('> div:nth-child(1) > div > a')
 
   let next = firstImg.attr('href')
   console.log(next)
