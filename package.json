@@ -1,0 +1,31 @@
+{
+  "name": "exhentai-downloader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bangbang93/node-exhentai-downloader.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bangbang93/node-exhentai-downloader/issues"
+  },
+  "homepage": "https://github.com/bangbang93/node-exhentai-downloader#readme",
+  "dependencies": {
+    "@types/cheerio": "^0.22.3",
+    "@types/fs-extra": "^4.0.2",
+    "@types/request-promise": "^4.1.38",
+    "cheerio": "^1.0.0-rc.2",
+    "fs-extra": "^4.0.2",
+    "loud-rejection": "^1.6.0",
+    "promise": "^8.0.1",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  }
+}
