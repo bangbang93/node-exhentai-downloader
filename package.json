@@ -26,6 +26,7 @@
     "loud-rejection": "^1.6.0",
     "promise": "^8.0.1",
     "request": "^2.83.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "ts-node": "^3.3.0"
   }
 }
