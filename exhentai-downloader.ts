@@ -42,15 +42,15 @@ async function main(index){
   }
 
   for(let i = 1;i<=total;i++){
-    console.log(`${i}/${total}`);
-    const html = await request(next);
-    const $ = cheerio.load(html);
-    const img = $('#img');
+    console.log(`${i}/${total}`)
+    const html = await request(next)
+    const $ = cheerio.load(html)
+    const img = $('#img')
     const src = img.attr('src');
-    console.log(src);
+    console.log(src)
     try {
-      const body = await request(src, {encoding: null});
-      await fs.writeFile(`${dir}/${i}.jpg`, body);
+      const body = await request(src, {encoding: null})
+      await fs.writeFile(`${dir}/${i}.jpg`, body)
       next = $('#next').attr('href');
     } catch (e) {
       console.error(e)
@@ -61,7 +61,8 @@ async function main(index){
         console.error('无法retry')
         return
       }
-      next+=(next.indexOf("?")>-1?"&":"?")+"nl="+imgId;
+      next+=(next.indexOf("?")>-1?"&":"?")+"nl="+imgId
+      i--
     }
     console.log(next);
   }
