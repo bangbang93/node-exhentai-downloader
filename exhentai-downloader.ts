@@ -30,10 +30,11 @@ async function main(index){
 
   console.log(title)
 
-  const firstImg = $('img[alt="01"]').parent('a')
+  const firstImg = $('#gdt').find('a').eq(0)
 
   let next = firstImg.attr('href')
   console.log(next)
+
   const totalHtml = $('#gdd').find('> table > tbody > tr:nth-child(6) > td.gdt2').text()
   const total = Number(totalHtml.match(/(\d+) pages/)[1])
   if (Number.isNaN(total)) {
@@ -47,9 +48,17 @@ async function main(index){
     const img = $('#img');
     const src = img.attr('src');
     console.log(src);
-    const body = await request(src, {encoding: null});
-    await fs.writeFile(`${dir}/${i}.jpg`, body);
-    next = $('#next').attr('href');
+    try {
+      const body = await request(src, {encoding: null});
+      await fs.writeFile(`${dir}/${i}.jpg`, body);
+      next = $('#next').attr('href');
+    } catch (e) {
+      console.error(e)
+      const loadfail = $('#loadfail')
+      const onclick = loadfail.attr('onclick')
+      const [,imgId] = onclick.match(/return nl\('(.*)'\)/)
+      next+=(next.indexOf("?")>-1?"&":"?")+"nl="+imgId;
+    }
     console.log(next);
   }
 }
