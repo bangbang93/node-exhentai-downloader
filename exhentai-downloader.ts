@@ -57,6 +57,10 @@ async function main(index){
       const loadfail = $('#loadfail')
       const onclick = loadfail.attr('onclick')
       const [,imgId] = onclick.match(/return nl\('(.*)'\)/)
+      if (!imgId) {
+        console.error('无法retry')
+        return
+      }
       next+=(next.indexOf("?")>-1?"&":"?")+"nl="+imgId;
     }
     console.log(next);
