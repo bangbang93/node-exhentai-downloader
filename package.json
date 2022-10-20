@@ -21,7 +21,7 @@
     "@types/cheerio": "^0.22.3",
     "@types/fs-extra": "^4.0.2",
     "@types/request-promise": "^4.1.38",
-    "cheerio": "^1.0.0-rc.2",
+    "cheerio": "^1.0.0-rc.12",
     "fs-extra": "^4.0.2",
     "loud-rejection": "^1.6.0",
     "promise": "^8.0.1",
